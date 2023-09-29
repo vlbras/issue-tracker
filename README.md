@@ -16,6 +16,20 @@ Efficient Issue managing api built with Node.js, TypeScript, TypeORM, MySQL, Doc
 
 • <b>TypeScript Support:</b> Uses TypeScript, which offers static typing and better code quality.
 
+## Endpoints
+
+• <b>POST /issues/</b> - to create an issue
+
+• <b>GET /issues/</b> - to get all issues
+
+• <b>GET /issues?title=:title</b> - to get all the issues filtered by title
+
+• <b>GET /issues/:id</b> - to get an issue by ID
+
+• <b>Patch /issues/:id</b> - to update title, description or state of the issue by ID
+
+• <b>Delete /issues/:id</b> - to delete the issue by ID
+
 ## Installation
 ```bash
 # if you don't have a yarn
