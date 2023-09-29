@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "ebfb11d4-5521-4ecd-b8c5-e3201ddf1c8d",
+		"name": "Issue Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28137666"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Issue 1\",\n    \"description\": \"Description 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/issues",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/issues",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get one",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/issues/a1f209b7-be6e-422a-8ee0-2d1cb0ad86da",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"issues",
+						"a1f209b7-be6e-422a-8ee0-2d1cb0ad86da"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"pending\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/issues/0d38ee5d-111a-49ac-8639-539959af1362",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"issues",
+						"0d38ee5d-111a-49ac-8639-539959af1362"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Description 2\",\n    \"state\": \"pending\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/issues/a1f209b7-be6e-422a-8ee0-2d1cb0ad86de",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"issues",
+						"a1f209b7-be6e-422a-8ee0-2d1cb0ad86de"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
