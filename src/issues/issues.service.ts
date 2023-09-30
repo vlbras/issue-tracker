@@ -7,7 +7,7 @@ import { CreateIssueDto } from './dto/create-issue.dto';
 import { UpdateIssueDto } from './dto/update-issue.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Issue } from './entities/issue.entity';
-import { Like, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class IssuesService {
@@ -23,12 +23,14 @@ export class IssuesService {
 
   findAll(title: string): Promise<Issue[]> {
     if (title) {
-      return this.issuesRepository.find({
-        where: {
-          title: Like(`%${title}%`),
-        },
-      });
+      return this.issuesRepository
+        .createQueryBuilder('issues')
+        .where('MATCH(issues.title) AGAINST(:title IN BOOLEAN MODE)', {
+          title: `+"${title}"`,
+        })
+        .getMany();
     }
+
     return this.issuesRepository.find();
   }
 

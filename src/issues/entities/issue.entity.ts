@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 import { IssueStates } from '../enums/issue-states.enum';
 
 @Entity('issues')
@@ -6,6 +6,7 @@ export class Issue {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Index('IDX_TITLE', { fulltext: true })
   @Column()
   title: string;
 
